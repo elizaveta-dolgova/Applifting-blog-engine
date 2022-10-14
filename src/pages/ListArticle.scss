@@ -1,0 +1,58 @@
+.article-list {
+    margin: 0 22.5rem;
+    color: #212529;
+
+    &__heading {
+        font-size: 4rem;
+        font-weight: 500;
+        margin: 6.4rem 0 6rem;
+        line-height: 4.8rem;
+    }
+}
+
+.article-card {
+    display: flex;
+    margin-top: 2.4rem ;
+
+    &__text-content {
+        padding-left: 2.4rem;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        font-weight: 500;
+    }
+
+    &__perex {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    &__link-to-detail {
+        color: #007BFF;
+        font-size: 1.4rem;
+        padding-right: 2rem;
+    }
+
+    &__comments-info {
+        font-size: 1.4rem;
+        color: #6C757D;
+    }
+}
+
+.article-info {
+    color: #6C757D;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2rem;
+    margin: 1.6rem 0;
+
+    &__author {
+        padding-right: 1.2rem;
+    }
+
+    &__date {
+        padding-left: 1.2rem;
+    }
+}
+    

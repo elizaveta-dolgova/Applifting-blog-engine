@@ -1,0 +1,76 @@
+.new-article-form {
+    margin: 4.8rem 0 15.2rem 22.4rem;
+    display: flex;
+    flex-direction: column;
+    width: 76rem;
+
+    &__heading-wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: .8rem;
+    }
+
+    &__heading {
+        font-size: 4rem;
+        font-weight: 500;
+        line-height: 4.8rem;
+        margin-right: 3.2rem;
+    }
+
+    &__submit-btn {
+        background-color: #007BFF;
+    }
+
+    &__label {
+        font-size: 1.6rem;
+        display: block;
+        cursor: pointer;
+        margin-top: 3.2rem;
+
+        &--file {
+            background-color: #6C757D;
+            color: #FFFFFF;
+            padding: .6rem 1.2rem;
+            border-radius: .4rem;
+            width:fit-content;
+            margin-top: .8rem;
+            cursor: pointer;
+        }
+
+        &--upload-file {
+            color: #007BFF;
+            display: inline;
+            padding-right: .8rem;
+            border-right: solid .1rem #C8C8C8;
+        }
+
+        &--delete-file {
+            color: #DC3545;
+            display: inline;
+            padding-left: .8rem;
+        }
+    }
+
+    &__input, &__textarea {
+        width: 100%;
+        font-size: 2rem;
+        line-height: 3rem;
+        margin-top: .8rem;
+        display: block;
+
+        &--file {
+            display: none;
+        }
+    }
+
+    &__textarea--content {
+        height: 76rem;
+        padding-right: .8rem;
+    }
+
+    &__error-msg {
+        color: #DC3545;
+        font-size: 1.6rem;
+    }
+}
+
