@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialAuthState = {
-    isAuthenticated: true,
-    access_token: 'b40a9804-7278-40bf-ba33-074834bb59b5',
-    userName: ''
-}
+    isAuthenticated: localStorage.getItem('isAuthenticated') ? true : false,
+    access_token: localStorage.getItem('access_token') || '',
+    userName: localStorage.getItem('userName') || '',
+};
 
 const authSlice = createSlice({
     name: 'auth',
@@ -17,6 +17,8 @@ const authSlice = createSlice({
         },
         logout(state) {
             state.isAuthenticated = false;
+            state.access_token = '';
+            state.userName = '';
         }
     }
 });

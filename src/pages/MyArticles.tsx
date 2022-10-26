@@ -1,63 +1,79 @@
 import React, { useEffect, useState } from 'react';
-import {instance} from '../api-helpers';
 import { Link } from 'react-router-dom';
+import './MyArticles.scss';
+import useAxios from '../hooks/useAxios';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
-import './MyArticles.scss';
 
 type Article = {
-    articleId: string,
-    title: string,
-    perex: string,
-}
+    articleId: string;
+    title: string;
+    perex: string;
+    imageId: string;
+};
+
+type ArticlesResponse = {
+    pagination: {};
+    items: Article[];
+};
 
 function MyArticles() {
+    const author = useSelector((state: RootState) => state.auth.userName);
     const [article, setArticle] = useState<Article[]>([]);
     const [needReFetch, setNeedReFetch] = useState(false);
     const [sortAlphabeticly, setSortAlphabeticly] = useState(true);
-    const accsesToken = useSelector((state: RootState) => state.auth.access_token);
+
+    const { sendRequest: getArticles } = useAxios<ArticlesResponse>();
+    const { sendRequest: deleteArticleRequest } = useAxios();
+    const { sendRequest: deleteImageRequest } = useAxios();
+
     useEffect(() => {
-        let controller: AbortController;
-        (async () => {
-            controller = new AbortController();
-            const response = await instance.get('/articles', {signal: controller.signal});
-            setArticle(response.data.items);
-        })()
+        const abortController = new AbortController();
+        const transformData = (data: ArticlesResponse) => {
+            setArticle(data.items)
+        }
+        getArticles({ url: `articles`, authRequired: true, abortController }, transformData);
+        
         return () => {
-            if (controller) {
-                controller.abort();
-            }
+            abortController.abort();
         }
     }, [needReFetch]);
 
     const sortingFunc = (array: Article[], alphabeticly: boolean) => {
         if (alphabeticly) {
-            return array.slice().sort((item1, item2) => item1.title.localeCompare(item2.title))
+            return array.slice().sort((item1, item2) => item1.title.localeCompare(item2.title));
         } else {
-            return array.slice().sort((item1, item2) => item2.title.localeCompare(item1.title))
+            return array.slice().sort((item1, item2) => item2.title.localeCompare(item1.title));
         }
     }
 
     const sortByName = () => {
-            setArticle(sortingFunc(article, sortAlphabeticly));
-            setSortAlphabeticly(!sortAlphabeticly);
-    }
+        setArticle(sortingFunc(article, sortAlphabeticly));
+        setSortAlphabeticly(!sortAlphabeticly);
+    };
 
     const deleteArticle = async (event: React.MouseEvent<HTMLButtonElement>) => {
-        const id = event.currentTarget.dataset.id;
-        const response = await instance.delete(`/articles/{${id}}`, {headers: {"Authorization": accsesToken}});
-        if(response.status === 204) {
-            setArticle(prevState => prevState.filter(item => item.articleId !== id));
+        const articleId = event.currentTarget.dataset.articleid;
+        const imageId = event.currentTarget.dataset.imageid;
+        await deleteImageRequest({ url: `images/${imageId}`, method: 'DELETE', authRequired: true });
+        const deleteSuccess = await deleteArticleRequest({ 
+            url: `articles/${articleId}`, 
+            method: 'DELETE', 
+            authRequired: true,
+        });
+        
+        if(deleteSuccess) {
+            setArticle(prevState => prevState.filter(item => item.articleId !== articleId));
             setNeedReFetch(!needReFetch);
         }
     }
 
     return (
-        <div className='my-articles-card'>
+        <>
             <div className='heading-wrapper'>
                 <h1 className='heading-wrapper__heading'>My articles</h1>
-                <Link to='/add-article' >
-                    <button className='heading-wrapper__button'>Create new article</button>
+                <Link to='/add-article' className='heading-wrapper__button' >
+                    Create new article
                 </Link>
             </div>
             <table className='articles-table'>
@@ -82,24 +98,25 @@ function MyArticles() {
                             </td>
                             <td className='table-body__cell'>{item.title}</td>
                             <td className='table-body__cell'>{item.perex}</td>
-                            <td className='table-body__cell'>Elizaveta</td>
+                            <td className='table-body__cell'>{author}</td>
                             <td className='table-body__cell'>0</td>
                             <td className='table-body__cell'>
-                                <Link to={`/edit-article?id=${item.articleId}`}>
-                                        <button className='table-body__edit' />
-                                </Link>
-                                <button 
-                                    className='table-body__delete' 
-                                    onClick={deleteArticle} 
-                                    data-id={item.articleId}
-                                />
+                                <div className='table-body__options'>
+                                    <Link to={`/edit-article/${item.articleId}`} className='table-body__edit' />
+                                    <button 
+                                        className='table-body__delete' 
+                                        onClick={deleteArticle} 
+                                        data-articleid={item.articleId}
+                                        data-imageid={item.imageId}
+                                    />
+                                </div>
                             </td>
                         </tr>
                     )
                 }
                 </tbody>
             </table>
-        </div>
+        </>
     );
 }
 

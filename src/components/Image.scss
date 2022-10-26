@@ -1,12 +1,18 @@
-.img-in-article-list {
-    width: 27rem;
+.img-wrapper-loading {
+    position: relative;
+    min-width: 27rem;
     height: 24rem;
+}
+
+.article-list__img {
     border-radius: .2rem;
     object-fit: cover;
+    width: 27rem;
+    height: 24rem;
 }
 
 .article-detail-content__img {
-    width: 100%;
     object-fit: cover;
     padding: 2.4rem 2.4rem 2.4rem 0;
+    width: 100%;
 }

@@ -1,3 +1,10 @@
+:root {
+  --primary-color: #007BFF;
+  --secondary-color: #6C757D;
+  --text-color: #212529;
+  --border-color: #DFDFDF;
+}
+
 html {
   font-size: 10px;
 }
@@ -6,37 +13,32 @@ html {
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Helvetica Neue', sans-serif;
-  line-height: 24px;
-  font-weight: 400;
-  color: #212529;
+  color: var(--text-color);
 }
 
-a, button {
-  cursor: pointer;
+a { 
   text-decoration: none;
 }
 
 ul {
   padding: 0;
-}
-
-li {
   list-style: none;
 }
 
 button {
   color: #FFFFFF;
-  border-radius: .4rem;
+  cursor: pointer;
   border: none;
-  padding: .6rem 1.2rem;
+  background-color: transparent;
 }
 
 input, textarea {
   padding: .8rem 0 .8rem 1.6rem;
-  color: #6C757D;
-  border: solid .1rem #DFDFDF;
+  color: var(--secondary-color);
+  border: solid .1rem var(--border-color);
   border-radius: .4rem;
   resize: none;
   font-family: inherit;

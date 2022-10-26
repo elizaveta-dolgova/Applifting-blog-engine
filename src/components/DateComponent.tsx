@@ -1,9 +1,7 @@
-import React from 'react';
-
 type DateProps = {
-    date: string,
-    className: string
-}
+    date: string;
+    className?: string;
+};
 
 function DateComponent(props: DateProps) {
 
