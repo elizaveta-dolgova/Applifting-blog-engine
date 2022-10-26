@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/elizaveta-dolgova/Applifting-blog-engine.git/static/css/main.09545ea2.css",
-    "main.js": "/elizaveta-dolgova/Applifting-blog-engine.git/static/js/main.f7787074.js",
-    "static/media/logo.svg": "/elizaveta-dolgova/Applifting-blog-engine.git/static/media/logo.fec7448221ba28496c71.svg",
-    "static/media/avatar.svg": "/elizaveta-dolgova/Applifting-blog-engine.git/static/media/avatar.c99fe5bef2916a10b1e4.svg",
-    "static/media/magnifying-glass.svg": "/elizaveta-dolgova/Applifting-blog-engine.git/static/media/magnifying-glass.ffb3b2ca9cf7e0e61337.svg",
-    "static/media/delete-icon.svg": "/elizaveta-dolgova/Applifting-blog-engine.git/static/media/delete-icon.81202558965d5d9e0e08.svg",
-    "static/media/edit-icon.svg": "/elizaveta-dolgova/Applifting-blog-engine.git/static/media/edit-icon.db0f6f61612827fafaa1.svg",
-    "static/media/arrow-up.svg": "/elizaveta-dolgova/Applifting-blog-engine.git/static/media/arrow-up.336de837ce00541afc08.svg",
-    "static/media/arrow-down.svg": "/elizaveta-dolgova/Applifting-blog-engine.git/static/media/arrow-down.12de865f7d87b30938ad.svg",
-    "static/media/Arrow.svg": "/elizaveta-dolgova/Applifting-blog-engine.git/static/media/Arrow.445a58cc0469d31add16.svg",
-    "index.html": "/elizaveta-dolgova/Applifting-blog-engine.git/index.html",
-    "static/media/table-sort.svg": "/elizaveta-dolgova/Applifting-blog-engine.git/static/media/table-sort.3544cb8202ffa4047113.svg",
-    "static/media/drop-down-arrow.svg": "/elizaveta-dolgova/Applifting-blog-engine.git/static/media/drop-down-arrow.d66392f26772b5c6c824.svg",
-    "main.09545ea2.css.map": "/elizaveta-dolgova/Applifting-blog-engine.git/static/css/main.09545ea2.css.map",
-    "main.f7787074.js.map": "/elizaveta-dolgova/Applifting-blog-engine.git/static/js/main.f7787074.js.map"
+    "main.css": "/Applifting-blog-engine/static/css/main.2e716640.css",
+    "main.js": "/Applifting-blog-engine/static/js/main.f7787074.js",
+    "static/media/logo.svg": "/Applifting-blog-engine/static/media/logo.fec7448221ba28496c71.svg",
+    "static/media/avatar.svg": "/Applifting-blog-engine/static/media/avatar.c99fe5bef2916a10b1e4.svg",
+    "static/media/magnifying-glass.svg": "/Applifting-blog-engine/static/media/magnifying-glass.ffb3b2ca9cf7e0e61337.svg",
+    "static/media/delete-icon.svg": "/Applifting-blog-engine/static/media/delete-icon.81202558965d5d9e0e08.svg",
+    "static/media/edit-icon.svg": "/Applifting-blog-engine/static/media/edit-icon.db0f6f61612827fafaa1.svg",
+    "static/media/arrow-up.svg": "/Applifting-blog-engine/static/media/arrow-up.336de837ce00541afc08.svg",
+    "static/media/arrow-down.svg": "/Applifting-blog-engine/static/media/arrow-down.12de865f7d87b30938ad.svg",
+    "static/media/Arrow.svg": "/Applifting-blog-engine/static/media/Arrow.445a58cc0469d31add16.svg",
+    "index.html": "/Applifting-blog-engine/index.html",
+    "static/media/table-sort.svg": "/Applifting-blog-engine/static/media/table-sort.3544cb8202ffa4047113.svg",
+    "static/media/drop-down-arrow.svg": "/Applifting-blog-engine/static/media/drop-down-arrow.d66392f26772b5c6c824.svg",
+    "main.2e716640.css.map": "/Applifting-blog-engine/static/css/main.2e716640.css.map",
+    "main.f7787074.js.map": "/Applifting-blog-engine/static/js/main.f7787074.js.map"
   },
   "entrypoints": [
-    "static/css/main.09545ea2.css",
+    "static/css/main.2e716640.css",
     "static/js/main.f7787074.js"
   ]
 }
