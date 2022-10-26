@@ -2,15 +2,13 @@
 
 This project was made as a test task for [Applifting](https://applifting.io/).
 
-
-
 Technologies used:
--React: hooks (useState, useEffect), custom hook for sending HTTP requests, useForm library for forms
--Redux for managing global state
--React Router for navigation
--Axios for HTTP requests (get, post, patch, delete)
--Token based authentication
--Sass for styling
+- React: hooks (useState, useEffect), custom hook for sending HTTP requests, useForm library for forms
+- Redux for managing global state
+- React Router for navigation
+- Axios for HTTP requests (get, post, patch, delete)
+- Token based authentication
+- Sass for styling
 
 ## Available Scripts
 
