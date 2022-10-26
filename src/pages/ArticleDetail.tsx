@@ -53,7 +53,6 @@ function ArticleDetail() {
 
     useEffect(() => {
         const abortController = fetchArticle();
-        console.log(isLoading);
         return () => {
             abortController.abort();
         };

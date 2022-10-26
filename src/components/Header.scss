@@ -23,15 +23,6 @@
         margin-right: 4rem;
     }
 
-    &--login::after {
-        content: '';
-        display: inline-block;
-        background-image: url('../../public/Arrow.svg');
-        background-size: cover;
-        width: 2.4rem;
-        height: 2.4rem;
-    }
-
     &__link {
         text-decoration: none;
         color: var(--secondary-color);
@@ -48,6 +39,15 @@
             color: #2B7EFB;
             display: flex;
             align-items: center;
+        }
+
+        &--login::after {
+            content: '';
+            display: inline-block;
+            background-image: url('../../public/Arrow.svg');
+            background-size: cover;
+            width: 2.4rem;
+            height: 2.4rem;
         }
     }
 }

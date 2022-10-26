@@ -3,7 +3,7 @@ function About() {
 
     return (
         <div>
-            <p>In progress...</p>            
+            <p>In progress...</p>
         </div>
     );
 }

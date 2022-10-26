@@ -68,7 +68,6 @@ function ArticleForm() {
 
     const createFormResult = async (formState: FormState) => {
         const formData = new FormData();
-        console.log(image);
         formData.append("image", image[0]);
         let imageIdNew = '';
         const getImageId = (data: ImagePostResponse) => {
@@ -90,7 +89,6 @@ function ArticleForm() {
                 body: formResult,
             });
             if (sendArticleSuccess && editArticleId) {
-                console.log('delete prev image')
                 deleteInitialImage({ url: `images/${imageIdInitial.current}`, method: 'DELETE', authRequired: true })
             }
         } else {

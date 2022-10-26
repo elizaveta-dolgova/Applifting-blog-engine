@@ -67,9 +67,7 @@ const ArticleComments = (props: ArticleCommentsProps) => {
     };
 
     const showLoader = isLoading || props.articleIsLoading;
-    console.log('articleIsLoading: ', props.articleIsLoading);
-    console.log('commentsLoading:', isLoading);
-    console.log(showLoader);
+
 
     return (
         <div className='article-comments'>
