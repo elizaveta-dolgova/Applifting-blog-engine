@@ -2,6 +2,8 @@
 
 This project was made as a test task for [Applifting](https://applifting.io).
 
+Deployed on applifting-blog-engine.netlify.app
+
 Technologies used:
 - React: hooks (useState, useEffect), custom hook for sending HTTP requests, useForm library for forms
 - Redux for managing global state
