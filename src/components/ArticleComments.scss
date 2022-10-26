@@ -1,0 +1,75 @@
+.article-comments {
+    &__heading {
+        font-size: 2.4rem;
+        line-height: 2.8rem;
+        color:#000000;
+        margin: 2.4rem 0;
+
+        &--loading {
+            display: inline-block;
+        }
+    }
+
+    &__loader-wrapper {
+        position: relative;
+        display: inline-block;
+        margin: .8rem 0 .8rem 4rem;
+    }
+
+    &__input {
+        width: 100%;
+        margin-bottom: 2.4rem;
+    }
+}
+
+.comment-card {
+    margin-bottom: 2.4rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+
+    &__author {
+        color: var(--text-color);
+        font-weight: 700;
+        margin-right: .8rem;
+    }
+
+    &__date {
+        color: var(--secondary-color);
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    &__content {
+        color: var(--text-color);
+        margin: .8rem 0;
+    }
+
+    &__vote-section {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.vote-btn {
+    width: 3.2rem;
+    height: 3.2rem;
+    background-size: cover;
+    border-left: solid .1rem var(--border-color);
+    padding: 0 .8rem;
+    border-radius: 0;
+    display: inline-block;
+
+    &--up {
+        background-image: url('../../public/arrow-up.svg');
+    }
+
+    &--down {
+        background-image: url('../../public/arrow-down.svg');
+        border-right: solid .1rem var(--border-color);
+    }
+}
+
+.comment-score {
+    display: inline-block;
+    margin-right: .8rem;
+}

@@ -1,13 +1,11 @@
 .new-article-form {
-    margin: 4.8rem 0 15.2rem 22.4rem;
+
     display: flex;
     flex-direction: column;
-    width: 76rem;
 
     &__heading-wrapper {
         display: flex;
         align-items: center;
-        margin-bottom: .8rem;
     }
 
     &__heading {
@@ -18,7 +16,9 @@
     }
 
     &__submit-btn {
-        background-color: #007BFF;
+        background-color: var(--primary-color);
+        border-radius: .4rem;
+        padding: .6rem 1.2rem;
     }
 
     &__label {
@@ -28,7 +28,7 @@
         margin-top: 3.2rem;
 
         &--file {
-            background-color: #6C757D;
+            background-color: var(--secondary-color);
             color: #FFFFFF;
             padding: .6rem 1.2rem;
             border-radius: .4rem;
@@ -38,7 +38,7 @@
         }
 
         &--upload-file {
-            color: #007BFF;
+            color: var(--primary-color);
             display: inline;
             padding-right: .8rem;
             border-right: solid .1rem #C8C8C8;
@@ -47,8 +47,14 @@
         &--delete-file {
             color: #DC3545;
             display: inline;
-            padding-left: .8rem;
+            margin-left: .8rem;
         }
+    }
+
+    &__image-preview {
+        width: 11.2rem;
+        height: 7.4rem;
+        margin: .8rem 0;
     }
 
     &__input, &__textarea {
@@ -56,7 +62,6 @@
         font-size: 2rem;
         line-height: 3rem;
         margin-top: .8rem;
-        display: block;
 
         &--file {
             display: none;
@@ -65,12 +70,12 @@
 
     &__textarea--content {
         height: 76rem;
-        padding-right: .8rem;
     }
 
     &__error-msg {
         color: #DC3545;
         font-size: 1.6rem;
+        margin: .8rem 0;
     }
 }
 

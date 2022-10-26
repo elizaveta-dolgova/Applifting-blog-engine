@@ -1,8 +1,7 @@
-import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import LogIn from './pages/LogIn';
-import ListArticle from './pages/ListArticle';
+import RecentArticles from './pages/RecentArticles';
 import ArticleForm from './pages/ArticleForm';
 import About from './pages/About';
 import MyArticles from './pages/MyArticles';
@@ -10,19 +9,21 @@ import ArticleDetail from './pages/ArticleDetail';
 import NotFound from './pages/NotFound';
 import { useSelector } from 'react-redux';
 import { RootState } from './store/store';
-
+import Card from './components/Card';
 
 function App() {
   const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+
   return (
-    <div>
+    <>
       <Header />
+      <Card>
       <Switch>
         <Route path='/' exact>
           <Redirect to='/home'/>
         </Route>
         <Route path='/home'>
-          <ListArticle />
+          <RecentArticles />
         </Route>
         <Route path='/articles/:id'>
           <ArticleDetail />
@@ -34,19 +35,20 @@ function App() {
           <About />
         </Route>
         <Route path='/add-article'>
-          {isAuthenticated ? <ArticleForm key={1}/> : <Redirect to='/login'/>}
+          {isAuthenticated ? <ArticleForm key={1}/> : <LogIn />}
         </Route>
-        <Route path='/edit-article'>
-          {isAuthenticated ? <ArticleForm key={2}/> : <Redirect to='/login'/>}
+        <Route path='/edit-article/:id'>
+          {isAuthenticated ? <ArticleForm key={2}/> : <LogIn />}
         </Route>
         <Route path='/my-articles'>
-        {isAuthenticated ? <MyArticles /> : <LogIn />}
+          {isAuthenticated ? <MyArticles /> : <LogIn />}
         </Route>
         <Route path='*'>
           <NotFound />
         </Route>
       </Switch>
-    </div>
+      </Card>
+    </>
   );
 }
 

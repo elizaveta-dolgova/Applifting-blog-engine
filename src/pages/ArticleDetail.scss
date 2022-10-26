@@ -1,11 +1,9 @@
 .article-detail-wrapper {
-    padding: 6.4rem 22.1rem 0 22.4rem;
     display: flex;
 }
 
 .article-detail-content {
-
-    flex: 7;
+    width: 70%;
 
     &__heading {
         font-size: 4rem;
@@ -14,51 +12,28 @@
     }
 
     &__info {
-        color: #6C757D;
+        color: var(--secondary-color);
         font-size: 1.4rem;
     }
 
-    &__author {
-        margin-right: 1.2rem;
-    }
-
-    &__date {
-        margin-left: 1.2rem;
+    &__dot {
+        margin: 0 1.2rem;
     }
 
     &__text {
-        width: 100%;
         font-size: 2rem;
         line-height: 3.4rem;
-        color: #212529;
-        border-bottom: .1rem solid #DFDFDF;
+        color: var(--text-color);
+        border-bottom: .1rem solid var(--border-color);
+        
+        p {
+            font-size: 2rem;
+            line-height: 3.4rem;
+            margin-bottom: 4.8rem;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 2.4rem;
+        }
     }
-}
-
-.article-detail-comments {
-
-    &__input {
-        width: 100%;
-    }
-}
-
-.article-detail-recommendation {
-    flex: 3;
-    font-size: 1.4rem;
-
-    &__heading {
-        border-left: .1rem solid #DFDFDF;
-        font-size: 2.4rem;
-        padding: 0 0 3.2rem 2.4rem;
-    }
-
-    &__list {
-        border-left: .1rem solid #DFDFDF;
-        padding-left: 2.4rem;
-    }
-
-    &__list-item {
-        margin-bottom: 2.4rem;
-    }
-
 }
